@@ -1,0 +1,19 @@
+name:    Methuselah
+main:    ${project.groupId}.${project.artifactId}.BukkitMain
+version: ${project.version}
+website: ${project.url}
+author:  SimSonic
+load:    STARTUP
+commands:
+  methuselah:
+    description: ${project.artifactId} command hub
+    usage: /<command> do what?
+permissions:
+  methuselah.info:
+    description: Receive notifications from Methuselah
+    default: op
+  methuselah.admin:
+    description: All 
+    default: op
+    children:
+      methuselah.info: true

@@ -1,5 +1,5 @@
 package ru.methuselah.serversideplugin;
-import ru.methuselah.serversideplugin.Network.SecurePluginConnection;
+
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
@@ -9,8 +9,6 @@ import java.util.Arrays;
 import java.util.jar.JarFile;
 import java.util.jar.Manifest;
 import ru.fourgotten.VoxileSecurity.Hacks.BinaryClassLoader;
-import ru.fourgotten.VoxileSecurity.Data.MessagesPlugin.AnswerPluginEnabled;
-import ru.fourgotten.VoxileSecurity.Data.MessagesPlugin.MessagePluginEnabled;
 import ru.fourgotten.VoxileSecurity.Hacks.HacksApplicator;
 import ru.fourgotten.VoxileSecurity.SecureConnection;
 import ru.fourgotten.VoxileSecurity.SecureConnection.ConnectionEstablishedNotification;
@@ -18,20 +16,10 @@ import ru.methuselah.authlib.GlobalReplacementList;
 
 public final class VanillaMain implements Runnable, ConnectionEstablishedNotification
 {
-	private final SecurePluginConnection connection = new SecurePluginConnection(this, false);
 	private BinaryClassLoader serverClassLoader;
-	private boolean firstTimeConnection = false;
 	@Override
 	public void connectionEstablished(SecureConnection connection)
 	{
-		if(firstTimeConnection)
-			return;
-		firstTimeConnection = true;
-		final MessagePluginEnabled message = new MessagePluginEnabled();
-		message.serverVersion = "vanilla";
-		final AnswerPluginEnabled answer = VanillaMain.this.connection.onPluginEnable(message);
-		HacksApplicator.process(answer.replacementList, serverClassLoader);
-		System.out.println("[Methuselah] Applied actual replacements.");
 	}
 	@Override
 	public void connectionBreaked()
@@ -55,7 +43,6 @@ public final class VanillaMain implements Runnable, ConnectionEstablishedNotific
 			Thread.currentThread().setContextClassLoader(serverClassLoader);
 			HacksApplicator.process(new GlobalReplacementList(), serverClassLoader);
 			System.out.println("[Methuselah] Applied default replacements.");
-			connection.start();
 			// Поиск главного класса и его метода public static void main(String args[])
 			final Class mainClass = serverClassLoader.loadClass(mainClassFQDN);
 			final Method mainMethod = mainClass.getMethod("main", new Class[] { String[].class });
@@ -79,7 +66,6 @@ public final class VanillaMain implements Runnable, ConnectionEstablishedNotific
 	}
 	public static void main(String[] args)
 	{
-		// args = new String[] { "E:\\# mine-temp\\jars\\Spigot_v1.7.10-R0.1_b1552.jar" };
 		System.out.println("");
 		System.out.println("Methuselah Vanilla Server Wrapper");
 		System.out.println("Our website: https://www.methuselah.ru");

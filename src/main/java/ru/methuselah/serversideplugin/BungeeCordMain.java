@@ -11,8 +11,9 @@ public final class BungeeCordMain extends Plugin
 	@Override
 	public void onEnable()
 	{
-		Utilities.processReplacements(new GlobalReplacementList());
 		getProxy().getPluginManager().registerListener(this, listener);
+		Utilities.processReplacements(new GlobalReplacementList());
+		System.out.println("Authentication scheme has been applied.");
 	}
 	@Override
 	public void onDisable()

@@ -12,7 +12,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
-	
+
 	<repositories>
 		<repository>
 			<id>nexus-oss-repo</id>
@@ -21,6 +21,10 @@
 		<repository>
 			<id>atlassian-repo</id>
 			<url>https://maven.atlassian.com/content/repositories/public/</url>
+		</repository>
+		<repository>
+			<id>methuselah-repo</id>
+			<url>http://maven.methuselah.ru/</url>
 		</repository>
 		<repository>
 			<id>bukkit-repo</id>
@@ -32,12 +36,8 @@
 		</repository>
 		<repository>
 			<id>sponge-repo</id>
-			<url>http://repo.spongepowered.org/Sponge/maven/</url>
+			<url>http://repo.spongepowered.org/maven/</url>
 		</repository>
-		<!--repository>
-			<id>methuselah-repo</id>
-			<url>https://nexus.methuselah.ru/content/groups/public/</url>
-		</repository-->
 	</repositories>
 	
 	<dependencies>
@@ -60,21 +60,15 @@
 			<scope>compile</scope>
 		</dependency>
 		<dependency>
-			<groupId>ru.fourgotten</groupId>
-			<artifactId>VoxileSecurity</artifactId>
-			<version>0.14a</version>
-			<scope>compile</scope>
-		</dependency>
-		<dependency>
 			<groupId>ru.methuselah</groupId>
 			<artifactId>serversideplugin-api</artifactId>
 			<version>0.14a</version>
 			<scope>compile</scope>
 		</dependency>
 		<dependency>
-			<groupId>ru.simsonic</groupId>
-			<artifactId>rscUtilityLibrary</artifactId>
-			<version>2.0.4</version>
+			<groupId>ru.fourgotten</groupId>
+			<artifactId>VoxileSecurity</artifactId>
+			<version>0.14a</version>
 			<scope>compile</scope>
 		</dependency>
 		<dependency>
@@ -89,12 +83,18 @@
 			<version>1.8-SNAPSHOT</version>
 			<scope>provided</scope>
 		</dependency>
-		<!--dependency>
+		<dependency>
+			<groupId>ru.simsonic</groupId>
+			<artifactId>rscUtilityLibrary</artifactId>
+			<version>2.0.4</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
 			<groupId>org.spongepowered</groupId>
-			<artifactId>SpongeAPI</artifactId>
-			<version>1.0.0-SNAPSHOT</version>
+			<artifactId>spongeapi</artifactId>
+			<version>2.0</version>
 			<scope>provided</scope>
-		</dependency-->
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -131,7 +131,7 @@
 			<plugin>
 				<groupId>com.github.wvengen</groupId>
 				<artifactId>proguard-maven-plugin</artifactId>
-				<version>2.0.9</version>
+				<version>2.0.10</version>
 				<executions>
 					<execution>
 						<id>execution_proguard_package</id>
@@ -146,13 +146,13 @@
 					<assembly>
 						<inclusions>
 							<inclusion>
-								<groupId>ru.simsonic</groupId>
-								<artifactId>rscUtilityLibrary</artifactId>
+								<groupId>ru.fourgotten</groupId>
+								<artifactId>VoxileSecurity</artifactId>
 								<library>false</library>
 							</inclusion>
 							<inclusion>
-								<groupId>ru.fourgotten</groupId>
-								<artifactId>VoxileSecurity</artifactId>
+								<groupId>ru.simsonic</groupId>
+								<artifactId>rscUtilityLibrary</artifactId>
 								<library>false</library>
 							</inclusion>
 						</inclusions>
@@ -228,6 +228,7 @@
 				</executions>
 			</plugin>
 		</plugins>
+		
 		<resources>
 			<resource>
 				<directory>src/main/resources</directory>

@@ -1,13 +1,16 @@
 package ru.methuselah.serversideplugin.API;
+
 import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 import ru.fourgotten.VoxileSecurity.Data.Methuselah.ProfileInfoPayload;
 import ru.fourgotten.VoxileSecurity.Data.Methuselah.ProfileInfoResponse;
 import ru.fourgotten.VoxileSecurity.Methuselah.MethuselahPrivate;
+import ru.fourgotten.VoxileSecurity.ProGuardKeep;
 import ru.methuselah.authlib.exceptions.ResponseException;
 import ru.methuselah.serversideplugin.BukkitMain;
 
+@ProGuardKeep
 public final class BukkitServerSideAPI extends ServerSideAPI
 {
 	private final BukkitMain plugin;

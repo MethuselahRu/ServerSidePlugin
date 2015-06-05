@@ -165,8 +165,8 @@
 						<option>-classobfuscationdictionary DictionaryClasses.txt</option>
 						<option>-obfuscationdictionary DictionaryFieldsMethods.txt</option>
 						<option>-adaptresourcefilenames</option>
-						<option>-repackageclasses ${project.groupId}.${project.artifactId}</option>
 						<option>-keepattributes Signature</option>
+						<option>-repackageclasses ${project.groupId}.${project.artifactId}</option>
 						<option>-keep public class ${project.groupId}.${project.artifactId}.*Main { public static void main(java.lang.String[]); }</option>
 						<option>-keepclassmembers @ru.fourgotten.VoxileSecurity.ProGuardKeep class ** { @java.lang.Override *; }</option>
 						<option>-keepclassmembers public class ru.fourgotten.VoxileSecurity.Data.** { *; }</option>

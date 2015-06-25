@@ -3,7 +3,7 @@ import java.io.File;
 import org.bukkit.configuration.file.FileConfiguration;
 import ru.methuselah.serversideplugin.BukkitMain;
 
-public class BukkitConfigValidator
+public class BukkitSettings
 {
 	public static final String versionPath = "internal.version";
 	public static void onLoad(BukkitMain plugin)

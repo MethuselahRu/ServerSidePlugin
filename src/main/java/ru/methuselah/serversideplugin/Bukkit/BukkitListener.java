@@ -10,10 +10,10 @@ import org.bukkit.event.player.PlayerLoginEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import ru.methuselah.serversideplugin.BukkitMain;
 
-public class GenericListener implements Listener
+public class BukkitListener implements Listener
 {
 	private final BukkitMain plugin;
-	public GenericListener(BukkitMain plugin)
+	public BukkitListener(BukkitMain plugin)
 	{
 		this.plugin = plugin;
 	}

@@ -3,10 +3,10 @@ package ru.methuselah.serversideplugin.API;
 import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
-import ru.fourgotten.VoxileSecurity.Data.Methuselah.ProfileInfoPayload;
-import ru.fourgotten.VoxileSecurity.Data.Methuselah.ProfileInfoResponse;
-import ru.fourgotten.VoxileSecurity.Methuselah.MethuselahPrivate;
-import ru.fourgotten.VoxileSecurity.ProGuardKeep;
+import ru.methuselah.securitylibrary.Data.Methuselah.ProfileInfoPayload;
+import ru.methuselah.securitylibrary.Data.Methuselah.ProfileInfoResponse;
+import ru.methuselah.securitylibrary.MethuselahPrivate;
+import ru.methuselah.securitylibrary.ProGuardKeep;
 import ru.methuselah.authlib.exceptions.ResponseException;
 import ru.methuselah.serversideplugin.BukkitMain;
 
@@ -26,7 +26,7 @@ public final class BukkitServerSideAPI extends ServerSideAPI
 			return cachedInfos.get(uuid);
 		final ProfileInfoPayload payload = new ProfileInfoPayload();
 		payload.uuid = uuid.toString().replace("-", "");
-		final ProfileInfoResponse response = MethuselahPrivate.getProfileInfo(payload);
+		final ProfileInfoResponse response = MethuselahPrivate.profileInfo(payload);
 		cachedInfos.put(uuid, response);
 		return response;
 	}

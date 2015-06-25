@@ -5,7 +5,7 @@
 	<name>ru.methuselah.serversideplugin</name>
 	<groupId>ru.methuselah</groupId>
 	<artifactId>serversideplugin</artifactId>
-	<version>0.14a</version>
+	<version>0.15a</version>
 	<packaging>jar</packaging>
 	<url>https://www.methuselah.ru</url>
 
@@ -56,19 +56,19 @@
 		<dependency>
 			<groupId>ru.methuselah</groupId>
 			<artifactId>authlib</artifactId>
-			<version>0.14a</version>
+			<version>0.15a</version>
 			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>ru.methuselah</groupId>
 			<artifactId>serversideplugin-api</artifactId>
-			<version>0.14a</version>
+			<version>0.15a</version>
 			<scope>compile</scope>
 		</dependency>
 		<dependency>
-			<groupId>ru.fourgotten</groupId>
-			<artifactId>VoxileSecurity</artifactId>
-			<version>0.14a</version>
+			<groupId>ru.methuselah</groupId>
+			<artifactId>securitylibrary</artifactId>
+			<version>0.15a</version>
 			<scope>compile</scope>
 		</dependency>
 		<dependency>
@@ -86,7 +86,7 @@
 		<dependency>
 			<groupId>ru.simsonic</groupId>
 			<artifactId>rscUtilityLibrary</artifactId>
-			<version>2.0.4</version>
+			<version>2.0.5</version>
 			<scope>compile</scope>
 		</dependency>
 		<dependency>
@@ -146,8 +146,8 @@
 					<assembly>
 						<inclusions>
 							<inclusion>
-								<groupId>ru.fourgotten</groupId>
-								<artifactId>VoxileSecurity</artifactId>
+								<groupId>ru.methuselah</groupId>
+								<artifactId>securitylibrary</artifactId>
 								<library>false</library>
 							</inclusion>
 							<inclusion>
@@ -168,11 +168,11 @@
 						<option>-keepattributes Signature</option>
 						<option>-repackageclasses ${project.groupId}.${project.artifactId}</option>
 						<option>-keep public class ${project.groupId}.${project.artifactId}.*Main { public static void main(java.lang.String[]); }</option>
-						<option>-keepclassmembers @ru.fourgotten.VoxileSecurity.ProGuardKeep class ** { @java.lang.Override *; }</option>
-						<option>-keepclassmembers public class ru.fourgotten.VoxileSecurity.Data.** { *; }</option>
+						<option>-keepclassmembers @ru.methuselah.securitylibrary.ProGuardKeep class ** { @java.lang.Override *; }</option>
+						<option>-keepclassmembers public class ru.methuselah.securitylibrary.Data.** { *; }</option>
 						<option>-dontnote ${project.groupId}.${project.artifactId}.*Main</option>
-						<option>-dontnote ru.fourgotten.VoxileSecurity.Data.**</option>
-						<option>-dontnote ru.fourgotten.VoxileSecurity.Hacks.**</option>
+						<option>-dontnote ru.methuselah.securitylibrary.Data.**</option>
+						<option>-dontnote ru.methuselah.securitylibrary.Hacks.**</option>
 						<option>-dontnote **-shaded.**</option>
 					</options>
 					<injar>${project.build.finalName}.jar</injar>
@@ -210,8 +210,8 @@
 									<include>com.google.code.gson:gson</include>
 									<include>ru.methuselah:authlib</include>
 									<include>ru.methuselah:serversideplugin-api</include>
+									<!--include>ru.methuselah:securitylibrary</include-->
 									<!--include>ru.simsonic:rscUtilityLibrary</include-->
-									<!--include>ru.fourgotten:VoxileSecurity</include-->
 								</includes>
 							</artifactSet>
 							<relocations>

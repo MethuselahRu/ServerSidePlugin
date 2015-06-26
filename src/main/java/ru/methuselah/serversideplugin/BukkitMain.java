@@ -7,15 +7,17 @@ import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
+import ru.methuselah.authlib.links.GlobalReplacementList;
+import ru.methuselah.authlib.links.Links;
+import ru.methuselah.authlib.links.LinksMethuselah;
 import ru.methuselah.securitylibrary.Data.MessagesPlugin.AnswerPluginPlayerInfo;
 import ru.methuselah.securitylibrary.ProGuardKeep;
-import ru.methuselah.authlib.GlobalReplacementList;
 import ru.methuselah.serversideplugin.API.BukkitServerSideAPI;
 import ru.methuselah.serversideplugin.API.ServerSideAPI;
 import ru.methuselah.serversideplugin.API.Settings;
-import ru.methuselah.serversideplugin.Bukkit.BukkitSettings;
 import ru.methuselah.serversideplugin.Bukkit.BukkitFeature;
 import ru.methuselah.serversideplugin.Bukkit.BukkitListener;
+import ru.methuselah.serversideplugin.Bukkit.BukkitSettings;
 import ru.methuselah.serversideplugin.Engine.Utilities;
 import ru.simsonic.rscUtilityLibrary.Bukkit.Commands.CommandAnswerException;
 import ru.simsonic.rscUtilityLibrary.TextProcessing.GenericChatCodes;
@@ -43,7 +45,9 @@ public final class BukkitMain extends JavaPlugin
 		for(BukkitFeature feature : features)
 			feature.onEnable();
 		consoleLog.info("[Methuselah] Plugin has been enabled.");
-		Utilities.processReplacements(new GlobalReplacementList());
+		final Links links = new LinksMethuselah();
+		final GlobalReplacementList grl = links.buildReplacements();
+		Utilities.processReplacements(grl);
 		consoleLog.info("[Methuselah] Authentication scheme has been applied.");
 	}
 	@Override

@@ -1,7 +1,9 @@
 package ru.methuselah.serversideplugin;
 
 import net.md_5.bungee.api.plugin.Plugin;
-import ru.methuselah.authlib.GlobalReplacementList;
+import ru.methuselah.authlib.links.GlobalReplacementList;
+import ru.methuselah.authlib.links.Links;
+import ru.methuselah.authlib.links.LinksMethuselah;
 import ru.methuselah.serversideplugin.BungeeCord.BungeeListener;
 import ru.methuselah.serversideplugin.Engine.Utilities;
 
@@ -12,7 +14,9 @@ public final class BungeeCordMain extends Plugin
 	public void onEnable()
 	{
 		getProxy().getPluginManager().registerListener(this, listener);
-		Utilities.processReplacements(new GlobalReplacementList());
+		final Links links = new LinksMethuselah();
+		final GlobalReplacementList grl = links.buildReplacements();
+		Utilities.processReplacements(grl);
 		System.out.println("Authentication scheme has been applied.");
 	}
 	@Override

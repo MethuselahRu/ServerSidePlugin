@@ -8,11 +8,11 @@ import java.net.URL;
 import java.util.Arrays;
 import java.util.jar.JarFile;
 import java.util.jar.Manifest;
+import ru.methuselah.authlib.links.GlobalReplacementList;
 import ru.methuselah.securitylibrary.Hacks.BinaryClassLoader;
 import ru.methuselah.securitylibrary.Hacks.HacksApplicator;
 import ru.methuselah.securitylibrary.SecureConnection;
 import ru.methuselah.securitylibrary.SecureConnection.ConnectionEstablishedNotification;
-import ru.methuselah.authlib.GlobalReplacementList;
 
 public final class VanillaMain implements Runnable, ConnectionEstablishedNotification
 {

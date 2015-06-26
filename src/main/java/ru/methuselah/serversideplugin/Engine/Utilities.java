@@ -1,8 +1,8 @@
 package ru.methuselah.serversideplugin.Engine;
 
 import java.util.LinkedList;
+import ru.methuselah.authlib.links.GlobalReplacementList;
 import ru.methuselah.securitylibrary.Hacks.HacksApplicator;
-import ru.methuselah.authlib.GlobalReplacementList;
 import ru.methuselah.serversideplugin.API.Settings;
 import ru.methuselah.serversideplugin.VanillaMain;
 import ru.simsonic.rscUtilityLibrary.TextProcessing.GenericChatCodes;

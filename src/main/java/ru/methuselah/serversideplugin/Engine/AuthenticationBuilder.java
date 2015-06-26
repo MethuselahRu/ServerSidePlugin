@@ -1,6 +1,6 @@
 package ru.methuselah.serversideplugin.Engine;
 
-import ru.methuselah.authlib.GlobalReplacementList;
+import ru.methuselah.authlib.links.GlobalReplacementList;
 
 public final class AuthenticationBuilder
 {

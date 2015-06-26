@@ -3,11 +3,11 @@ package ru.methuselah.serversideplugin.API;
 import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
+import ru.methuselah.authlib.methods.ResponseException;
 import ru.methuselah.securitylibrary.Data.Methuselah.ProfileInfoPayload;
 import ru.methuselah.securitylibrary.Data.Methuselah.ProfileInfoResponse;
 import ru.methuselah.securitylibrary.MethuselahPrivate;
 import ru.methuselah.securitylibrary.ProGuardKeep;
-import ru.methuselah.authlib.exceptions.ResponseException;
 import ru.methuselah.serversideplugin.BukkitMain;
 
 @ProGuardKeep

@@ -15,7 +15,10 @@ public final class Utilities
 		for(ClassLoader classLoader = Utilities.class.getClassLoader(); classLoader != null; classLoader = classLoader.getParent())
 			loaders.add(0, classLoader);
 		for(ClassLoader classLoader : loaders)
+		{
+			System.out.println("[Methuselah] Processing ClassLoader: " + classLoader.getClass().getCanonicalName());
 			HacksApplicator.process(replacements, classLoader);
+		}
 	}
 	public String getDebugStackTrace()
 	{

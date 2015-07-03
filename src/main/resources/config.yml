@@ -3,7 +3,6 @@ general:
   links-provider: methuselah
   # Enable debug mode?
   debug: false
-# Section is applicable only when general.links-provider is set to methuselah
 methuselah:
   # Unique project code
   code: "<Enter your project's code (5 chars) here>"

@@ -173,6 +173,7 @@
 						<option>-keep public class ${project.groupId}.${project.artifactId}.*Main { public static void main(java.lang.String[]); }</option>
 						<option>-keepclassmembers @ru.methuselah.securitylibrary.ProGuardKeep class ** { @java.lang.Override *; }</option>
 						<option>-keepclassmembers public class ru.methuselah.securitylibrary.Data.** { *; }</option>
+						<option>-keepclassmembers public class ${project.groupId}.${project.artifactId}.API.** { public *; }</option>
 						<option>-dontnote ${project.groupId}.${project.artifactId}.*Main</option>
 						<option>-dontnote ru.methuselah.securitylibrary.Data.**</option>
 						<option>-dontnote ru.methuselah.securitylibrary.Hacks.**</option>

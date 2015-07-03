@@ -35,19 +35,19 @@ public final class CustomLinksBuilder
 			final LinksCustomContainer lccWrite = new LinksCustomContainer();
 			final Links defaultLinks = new LinksMethuselah();
 			lccWrite.urlBase            = defaultLinks.getBaseURL();
-			lccWrite.methodAuthenticate = defaultLinks.getAuthenticate();
-			lccWrite.methodRefresh      = defaultLinks.getRefresh();
-			lccWrite.methodValidate     = defaultLinks.getValidate();
-			lccWrite.methodInvalidate   = defaultLinks.getInvalidate();
-			lccWrite.methodSignout      = defaultLinks.getSignout();
-			lccWrite.methodJoin         = defaultLinks.getJoin();
-			lccWrite.methodHasJoined    = defaultLinks.getHasJoined();
-			lccWrite.legacyJoin         = defaultLinks.getLegacyJoin();
-			lccWrite.legacyHasJoined    = defaultLinks.getLegacyHasJoined();
-			lccWrite.apiNameHistory     = defaultLinks.getNameHistory();
-			lccWrite.apiNameToUUID      = defaultLinks.getNameToUUID();
-			lccWrite.apiBulkNames       = defaultLinks.getBulkNames();
-			lccWrite.apiProfile         = defaultLinks.getProfile();
+			lccWrite.methodAuthenticate = defaultLinks.getAuthenticate().replace(lccWrite.urlBase, "");
+			lccWrite.methodRefresh      = defaultLinks.getRefresh().replace(lccWrite.urlBase, "");
+			lccWrite.methodValidate     = defaultLinks.getValidate().replace(lccWrite.urlBase, "");
+			lccWrite.methodInvalidate   = defaultLinks.getInvalidate().replace(lccWrite.urlBase, "");
+			lccWrite.methodSignout      = defaultLinks.getSignout().replace(lccWrite.urlBase, "");
+			lccWrite.methodJoin         = defaultLinks.getJoin().replace(lccWrite.urlBase, "");
+			lccWrite.methodHasJoined    = defaultLinks.getHasJoined().replace(lccWrite.urlBase, "");
+			lccWrite.legacyJoin         = defaultLinks.getLegacyJoin().replace(lccWrite.urlBase, "");
+			lccWrite.legacyHasJoined    = defaultLinks.getLegacyHasJoined().replace(lccWrite.urlBase, "");
+			lccWrite.apiNameHistory     = defaultLinks.getNameHistory().replace(lccWrite.urlBase, "");
+			lccWrite.apiNameToUUID      = defaultLinks.getNameToUUID().replace(lccWrite.urlBase, "");
+			lccWrite.apiBulkNames       = defaultLinks.getBulkNames().replace(lccWrite.urlBase, "");
+			lccWrite.apiProfile         = defaultLinks.getProfile().replace(lccWrite.urlBase, "");
 			try
 			{
 				HashAndCipherUtilities.saveObject(file, lccWrite, LinksCustomContainer.class);

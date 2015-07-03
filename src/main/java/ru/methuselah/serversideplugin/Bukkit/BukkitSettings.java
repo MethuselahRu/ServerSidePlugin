@@ -1,4 +1,5 @@
 package ru.methuselah.serversideplugin.Bukkit;
+
 import java.io.File;
 import org.bukkit.configuration.file.FileConfiguration;
 import ru.methuselah.serversideplugin.BukkitMain;
@@ -15,13 +16,12 @@ public class BukkitSettings
 			case 0:
 				new File(plugin.getDataFolder(), "config.yml").delete();
 				plugin.saveDefaultConfig();
-			case 1:
-				updateFrom_v1_to_v2(config);
-				plugin.saveConfig();
 				plugin.reloadConfig();
-			case 2:
+				config = plugin.getConfig();
+			case 1:
+				break;
 				// config = plugin.getConfig();
-				// updateFrom_v2_to_v3(config);
+				// updateFrom_v1_to_v2(config);
 				// plugin.saveConfig();
 				// plugin.reloadConfig();
 			default:
@@ -29,6 +29,7 @@ public class BukkitSettings
 				break;
 		}
 	}
+	/*
 	public static void updateFrom_v1_to_v2(FileConfiguration config)
 	{
 		setIfNotContains(config, "general.not-so-secret-keyword", "<Enter your no-so-secret keyword>");
@@ -41,7 +42,6 @@ public class BukkitSettings
 		config.set(versionPath, 2);
 		BukkitMain.consoleLog.info("[Methuselah] Configuration version has been updated to version 2.");
 	}
-	/*
 	public static void updateFrom_v2_to_v3(FileConfiguration config)
 	{
 		config.set(versionPath, 3);

@@ -7,9 +7,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
-import ru.methuselah.authlib.links.GlobalReplacementList;
-import ru.methuselah.authlib.links.Links;
-import ru.methuselah.authlib.links.LinksMethuselah;
 import ru.methuselah.securitylibrary.Data.MessagesPlugin.AnswerPluginPlayerInfo;
 import ru.methuselah.securitylibrary.ProGuardKeep;
 import ru.methuselah.serversideplugin.API.BukkitServerSideAPI;
@@ -18,7 +15,7 @@ import ru.methuselah.serversideplugin.API.Settings;
 import ru.methuselah.serversideplugin.Bukkit.BukkitFeature;
 import ru.methuselah.serversideplugin.Bukkit.BukkitListener;
 import ru.methuselah.serversideplugin.Bukkit.BukkitSettings;
-import ru.methuselah.serversideplugin.Engine.Utilities;
+import ru.methuselah.serversideplugin.Bukkit.FeatureIntegration;
 import ru.simsonic.rscUtilityLibrary.Bukkit.Commands.CommandAnswerException;
 import ru.simsonic.rscUtilityLibrary.TextProcessing.GenericChatCodes;
 
@@ -34,6 +31,7 @@ public final class BukkitMain extends JavaPlugin
 	public void onLoad()
 	{
 		BukkitSettings.onLoad(this);
+		features.add(new FeatureIntegration(this));
 		for(BukkitFeature feature : features)
 			feature.onLoad();
 		consoleLog.info("[Methuselah] Plugin has been loaded.");

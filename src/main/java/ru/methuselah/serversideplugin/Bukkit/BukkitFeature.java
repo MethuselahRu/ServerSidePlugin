@@ -8,14 +8,12 @@ import ru.simsonic.rscUtilityLibrary.Bukkit.Commands.CommandAnswerException;
 public abstract class BukkitFeature
 {
 	protected final BukkitMain plugin;
-	protected BukkitFeature(BukkitMain parent)
+	protected BukkitFeature(BukkitMain plugin)
 	{
-		this.plugin = parent;
+		this.plugin = plugin;
 	}
 	public abstract void onLoad();
 	public abstract void onEnable();
 	public abstract void onDisable();
-	public abstract void onConnected();
-	public abstract void onDisconnected();
 	public abstract void onCommand(CommandSender sender, Command command, String[] args) throws CommandAnswerException;
 }

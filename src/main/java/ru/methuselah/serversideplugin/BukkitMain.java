@@ -45,10 +45,6 @@ public final class BukkitMain extends JavaPlugin
 		for(BukkitFeature feature : features)
 			feature.onEnable();
 		consoleLog.info("[Methuselah] Plugin has been enabled.");
-		final Links links = new LinksMethuselah();
-		final GlobalReplacementList grl = links.buildReplacements();
-		Utilities.processReplacements(grl);
-		consoleLog.info("[Methuselah] Authentication scheme has been applied.");
 	}
 	@Override
 	public void onDisable()

@@ -5,7 +5,7 @@
 	<name>ru.methuselah.serversideplugin</name>
 	<groupId>ru.methuselah</groupId>
 	<artifactId>serversideplugin</artifactId>
-	<version>0.15a</version>
+	<version>0.16a</version>
 	<packaging>jar</packaging>
 	<url>https://www.methuselah.ru</url>
 
@@ -54,19 +54,19 @@
 		<dependency>
 			<groupId>ru.methuselah</groupId>
 			<artifactId>authlib</artifactId>
-			<version>0.15a</version>
+			<version>0.16a</version>
 			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>ru.methuselah</groupId>
 			<artifactId>serversideplugin-api</artifactId>
-			<version>0.15a</version>
+			<version>0.16a</version>
 			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>ru.methuselah</groupId>
 			<artifactId>securitylibrary</artifactId>
-			<version>0.15a</version>
+			<version>0.16a</version>
 			<scope>compile</scope>
 		</dependency>
 		<dependency>

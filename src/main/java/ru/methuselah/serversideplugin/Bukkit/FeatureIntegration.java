@@ -48,8 +48,8 @@ public class FeatureIntegration extends BukkitFeature
 	private void integrate()
 	{
 		final FileConfiguration config = plugin.getConfig();
-		final String provider = config.getString("settings.integration.links-provider", "methuselah");
-		config.set("settings.integration.links-provider", provider);
+		final String provider = config.getString("general.links-provider", "methuselah");
+		config.set("general.links-provider", provider);
 		plugin.saveConfig();
 		final Links links = analyze(provider.toLowerCase());
 		final GlobalReplacementList grl = links.buildReplacements();
@@ -61,17 +61,22 @@ public class FeatureIntegration extends BukkitFeature
 		switch(provider.toLowerCase())
 		{
 			case "mojang":
+			case "mojang.com":
+				BukkitMain.consoleLog.info("[Methuselah] Using Mojang links for authentication.");
 				return new LinksMojang();
 			case "methuselah":
 			case "methuselah.ru":
 			case "auth.methuselah.ru":
+				BukkitMain.consoleLog.info("[Methuselah] Using methuselah.ru links for authentication.");
 				return new LinksMethuselah();
 			case "ely":
 			case "ely.by":
 			case "minecraft.ely.by":
+				BukkitMain.consoleLog.info("[Methuselah] Using ely.by links for authentication.");
 				return new LinksElyBy();
 			case "custom":
 			default:
+				BukkitMain.consoleLog.info("[Methuselah] Using links from custom-links.json for authentication.");
 				break;
 		}
 		try

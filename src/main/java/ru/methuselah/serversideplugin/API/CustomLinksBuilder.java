@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import ru.methuselah.authlib.links.Links;
 import ru.methuselah.authlib.links.LinksMethuselah;
-import ru.simsonic.rscUtilityLibrary.HashAndCipherUtilities;
+import ru.simsonic.rscCommonsLibrary.HashAndCipherUtilities;
 
 public final class CustomLinksBuilder
 {

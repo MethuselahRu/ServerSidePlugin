@@ -16,7 +16,7 @@ import ru.methuselah.serversideplugin.API.CustomLinksBuilder;
 import ru.methuselah.serversideplugin.BukkitMain;
 import static ru.methuselah.serversideplugin.BukkitMain.consoleLog;
 import ru.methuselah.serversideplugin.Engine.Utilities;
-import ru.simsonic.rscUtilityLibrary.Bukkit.Commands.CommandAnswerException;
+import ru.simsonic.rscMinecraftLibrary.Bukkit.CommandAnswerException;
 
 public class FeatureIntegration extends BukkitFeature
 {

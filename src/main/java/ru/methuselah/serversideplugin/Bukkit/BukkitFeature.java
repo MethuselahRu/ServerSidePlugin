@@ -3,7 +3,7 @@ package ru.methuselah.serversideplugin.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import ru.methuselah.serversideplugin.BukkitMain;
-import ru.simsonic.rscUtilityLibrary.Bukkit.Commands.CommandAnswerException;
+import ru.simsonic.rscMinecraftLibrary.Bukkit.CommandAnswerException;
 
 public abstract class BukkitFeature
 {

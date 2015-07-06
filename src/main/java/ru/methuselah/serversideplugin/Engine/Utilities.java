@@ -5,7 +5,7 @@ import ru.methuselah.authlib.links.GlobalReplacementList;
 import ru.methuselah.securitylibrary.Hacks.HacksApplicator;
 import ru.methuselah.serversideplugin.API.Settings;
 import ru.methuselah.serversideplugin.VanillaMain;
-import ru.simsonic.rscUtilityLibrary.TextProcessing.GenericChatCodes;
+import ru.simsonic.rscMinecraftLibrary.Bukkit.GenericChatCodes;
 
 public final class Utilities
 {

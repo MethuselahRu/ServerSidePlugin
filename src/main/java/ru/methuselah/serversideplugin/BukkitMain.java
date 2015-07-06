@@ -16,8 +16,8 @@ import ru.methuselah.serversideplugin.Bukkit.BukkitFeature;
 import ru.methuselah.serversideplugin.Bukkit.BukkitListener;
 import ru.methuselah.serversideplugin.Bukkit.BukkitSettings;
 import ru.methuselah.serversideplugin.Bukkit.FeatureIntegration;
-import ru.simsonic.rscUtilityLibrary.Bukkit.Commands.CommandAnswerException;
-import ru.simsonic.rscUtilityLibrary.TextProcessing.GenericChatCodes;
+import ru.simsonic.rscMinecraftLibrary.Bukkit.CommandAnswerException;
+import ru.simsonic.rscMinecraftLibrary.Bukkit.GenericChatCodes;
 
 @ProGuardKeep
 public final class BukkitMain extends JavaPlugin

@@ -83,8 +83,14 @@
 		</dependency>
 		<dependency>
 			<groupId>ru.simsonic</groupId>
-			<artifactId>rscUtilityLibrary</artifactId>
-			<version>2.0.5</version>
+			<artifactId>rscCommonsLibrary</artifactId>
+			<version>2.1.0</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>ru.simsonic</groupId>
+			<artifactId>rscMinecraftLibrary</artifactId>
+			<version>2.1.0</version>
 			<scope>compile</scope>
 		</dependency>
 		<dependency>
@@ -155,7 +161,12 @@
 							</inclusion>
 							<inclusion>
 								<groupId>ru.simsonic</groupId>
-								<artifactId>rscUtilityLibrary</artifactId>
+								<artifactId>rscCommonsLibrary</artifactId>
+								<library>false</library>
+							</inclusion>
+							<inclusion>
+								<groupId>ru.simsonic</groupId>
+								<artifactId>rscMinecraftLibrary</artifactId>
 								<library>false</library>
 							</inclusion>
 						</inclusions>
@@ -215,17 +226,23 @@
 									<include>ru.methuselah:authlib</include>
 									<include>ru.methuselah:serversideplugin-api</include>
 									<!--include>ru.methuselah:securitylibrary</include-->
-									<!--include>ru.simsonic:rscUtilityLibrary</include-->
+									<!--include>ru.simsonic:rscCommonsLibrary</include-->
+									<!--include>ru.simsonic:rscMinecraftLibrary</include-->
 								</includes>
 							</artifactSet>
 							<relocations>
 								<relocation>
 									<pattern>com.google.gson</pattern>
 									<shadedPattern>${project.groupId}.${project.artifactId}.com-google-gson-shaded</shadedPattern>
-									<includes>
-										<include>com.google.gson.*</include>
-									</includes>
 								</relocation>
+								<!--relocation>
+									<pattern>ru.simsonic.rscCommonsLibrary</pattern>
+									<shadedPattern>${project.groupId}.${project.artifactId}.rscCommonsLibrary-shaded</shadedPattern>
+								</relocation-->
+								<!--relocation>
+									<pattern>ru.simsonic.rscMinecraftLibrary</pattern>
+									<shadedPattern>${project.groupId}.${project.artifactId}.rscMinecraftLibrary-shaded</shadedPattern>
+								</relocation-->
 							</relocations>
 						</configuration>
 					</execution>

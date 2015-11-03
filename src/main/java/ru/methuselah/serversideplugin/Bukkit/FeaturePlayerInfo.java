@@ -1,6 +1,11 @@
 package ru.methuselah.serversideplugin.Bukkit;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.UUID;
+import org.bukkit.OfflinePlayer;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandSender;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerPreLoginEvent;
@@ -8,14 +13,47 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerKickEvent;
 import org.bukkit.event.player.PlayerLoginEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
+import ru.methuselah.securitylibrary.Data.MessagesPlugin.AnswerPluginPlayerInfo;
 import ru.methuselah.serversideplugin.BukkitMain;
+import ru.simsonic.rscMinecraftLibrary.Bukkit.CommandAnswerException;
 
-public class BukkitListener implements Listener
+public class FeaturePlayerInfo extends BukkitFeature implements Listener
 {
-	private final BukkitMain plugin;
-	public BukkitListener(BukkitMain plugin)
+	public final HashMap<String, AnswerPluginPlayerInfo> playerInfo = new HashMap<>();
+	public FeaturePlayerInfo(BukkitMain plugin)
 	{
-		this.plugin = plugin;
+		super(plugin);
+	}
+	@Override
+	public void onLoad()
+	{
+	}
+	@Override
+	public void onEnable()
+	{
+		plugin.getServer().getPluginManager().registerEvents(this, plugin);
+		final OfflinePlayer[] allPlayers = plugin.getServer().getOfflinePlayers();
+		final ArrayList<UUID> allUUIDs = new ArrayList<>();
+		for(OfflinePlayer player : allPlayers)
+			allUUIDs.add(player.getUniqueId());
+		// Проверить массив allUUIDs на корректность и удалить неверные
+	}
+	@Override
+	public void onDisable()
+	{
+	}
+	@Override
+	public void onCommand(CommandSender sender, Command command, String[] args) throws CommandAnswerException
+	{
+		if(args.length > 0 && args[0] != null && !"".equals(args[0]))
+		{
+			final String subcommand = args[0].toLowerCase();
+			switch(subcommand)
+			{
+				case "whois":
+					break;
+			}
+		}
 	}
 	@org.bukkit.event.EventHandler
 	public void onAsyncPlayerPreLogin(AsyncPlayerPreLoginEvent event)
@@ -67,13 +105,13 @@ public class BukkitListener implements Listener
 	{
 		final UUID uuid = event.getPlayer().getUniqueId();
 		// plugin.connection.onPlayerOffline(uuid);
-		plugin.playerInfo.remove(uuid.toString().replace("-", "").toLowerCase());
+		playerInfo.remove(uuid.toString().replace("-", "").toLowerCase());
 	}
 	@org.bukkit.event.EventHandler
 	public void onPlayerQuit(PlayerQuitEvent event)
 	{
 		final UUID uuid = event.getPlayer().getUniqueId();
 		// plugin.connection.onPlayerOffline(uuid);
-		plugin.playerInfo.remove(uuid.toString().replace("-", "").toLowerCase());
+		playerInfo.remove(uuid.toString().replace("-", "").toLowerCase());
 	}
 }

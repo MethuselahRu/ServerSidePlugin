@@ -9,11 +9,11 @@ commands:
     description: ${project.artifactId} command hub
     usage: /<command> do what?
 permissions:
-  methuselah.info:
+  methuselah.notify:
     description: Receive notifications from Methuselah
     default: op
   methuselah.admin:
     description: All 
     default: op
     children:
-      methuselah.info: true
+      methuselah.notify: true

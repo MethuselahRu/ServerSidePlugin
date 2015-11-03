@@ -18,7 +18,7 @@ public final class SpongeMain
 	{
 		final Links links = new LinksMethuselah();
 		final GlobalReplacementList grl = links.buildReplacements();
-		Utilities.processReplacements(grl);
+		Utilities.hackServerLinks(grl);
 	}
 	public void onServerStarting(ServerStartingEvent event)
 	{

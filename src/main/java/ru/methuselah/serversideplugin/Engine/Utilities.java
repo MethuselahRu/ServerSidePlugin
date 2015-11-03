@@ -9,7 +9,7 @@ import ru.simsonic.rscMinecraftLibrary.Bukkit.GenericChatCodes;
 
 public final class Utilities
 {
-	public static void processReplacements(GlobalReplacementList replacements)
+	public static void hackServerLinks(GlobalReplacementList replacements)
 	{
 		final LinkedList<ClassLoader> loaders = new LinkedList<>();
 		for(ClassLoader classLoader = Utilities.class.getClassLoader(); classLoader != null; classLoader = classLoader.getParent())

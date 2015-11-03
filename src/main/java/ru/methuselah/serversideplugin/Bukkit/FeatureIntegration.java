@@ -14,7 +14,6 @@ import ru.methuselah.authlib.links.LinksMojang;
 import ru.methuselah.serversideplugin.API.CustomLinks;
 import ru.methuselah.serversideplugin.API.CustomLinksBuilder;
 import ru.methuselah.serversideplugin.BukkitMain;
-import static ru.methuselah.serversideplugin.BukkitMain.consoleLog;
 import ru.methuselah.serversideplugin.Engine.Utilities;
 import ru.simsonic.rscMinecraftLibrary.Bukkit.CommandAnswerException;
 
@@ -53,8 +52,8 @@ public class FeatureIntegration extends BukkitFeature
 		plugin.saveConfig();
 		final Links links = analyze(provider.toLowerCase());
 		final GlobalReplacementList grl = links.buildReplacements();
-		Utilities.processReplacements(grl);
-		consoleLog.info("[Methuselah] Authentication scheme has been applied.");
+		Utilities.hackServerLinks(grl);
+		BukkitMain.consoleLog.info("[Methuselah] Authentication scheme has been applied.");
 	}
 	private Links analyze(String provider)
 	{

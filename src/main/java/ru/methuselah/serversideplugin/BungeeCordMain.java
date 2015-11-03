@@ -16,7 +16,7 @@ public final class BungeeCordMain extends Plugin
 		getProxy().getPluginManager().registerListener(this, listener);
 		final Links links = new LinksMethuselah();
 		final GlobalReplacementList grl = links.buildReplacements();
-		Utilities.processReplacements(grl);
+		Utilities.hackServerLinks(grl);
 		System.out.println("Authentication scheme has been applied.");
 	}
 	@Override

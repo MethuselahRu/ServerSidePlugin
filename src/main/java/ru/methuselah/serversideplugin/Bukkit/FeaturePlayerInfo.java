@@ -32,11 +32,13 @@ public class FeaturePlayerInfo extends BukkitFeature implements Listener
 	public void onEnable()
 	{
 		plugin.getServer().getPluginManager().registerEvents(this, plugin);
+		/*
 		final OfflinePlayer[] allPlayers = plugin.getServer().getOfflinePlayers();
 		final ArrayList<UUID> allUUIDs = new ArrayList<>();
 		for(OfflinePlayer player : allPlayers)
 			allUUIDs.add(player.getUniqueId());
 		// Проверить массив allUUIDs на корректность и удалить неверные
+		*/
 	}
 	@Override
 	public void onDisable()

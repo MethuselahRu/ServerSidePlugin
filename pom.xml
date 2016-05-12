@@ -5,7 +5,7 @@
 	<name>ru.methuselah.serversideplugin</name>
 	<groupId>ru.methuselah</groupId>
 	<artifactId>serversideplugin</artifactId>
-	<version>0.16a</version>
+	<version>0.16.1a</version>
 	<packaging>jar</packaging>
 	<url>https://www.methuselah.ru</url>
 
@@ -18,10 +18,10 @@
 			<id>project-local-repo</id>
 			<url>file://${project.basedir}/libs/</url>
 		</repository>
-		<repository>
+		<!--repository>
 			<id>nexus-oss-repo</id>
 			<url>https://oss.sonatype.org/content/groups/public/</url>
-		</repository>
+		</repository-->
 		<repository>
 			<id>atlassian-repo</id>
 			<url>https://maven.atlassian.com/content/repositories/public/</url>
@@ -70,8 +70,8 @@
 			<scope>compile</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.spigotmc</groupId>
-			<artifactId>spigot-api</artifactId>
+			<groupId>org.bukkit</groupId>
+			<artifactId>bukkit</artifactId>
 			<version>1.8.8-R0.1-SNAPSHOT</version>
 			<scope>provided</scope>
 		</dependency>
@@ -90,7 +90,7 @@
 		<dependency>
 			<groupId>ru.simsonic</groupId>
 			<artifactId>rscMinecraftLibrary</artifactId>
-			<version>2.2.0</version>
+			<version>2.2.1</version>
 			<scope>compile</scope>
 		</dependency>
 		<dependency>

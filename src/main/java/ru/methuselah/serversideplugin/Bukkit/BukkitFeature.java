@@ -1,6 +1,5 @@
 package ru.methuselah.serversideplugin.Bukkit;
 
-import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import ru.methuselah.serversideplugin.BukkitMain;
 import ru.simsonic.rscMinecraftLibrary.Bukkit.CommandAnswerException;
@@ -15,5 +14,5 @@ public abstract class BukkitFeature
 	public abstract void onLoad();
 	public abstract void onEnable();
 	public abstract void onDisable();
-	public abstract void onCommand(CommandSender sender, Command command, String[] args) throws CommandAnswerException;
+	public abstract void onCommand(CommandSender sender, String command, String[] args) throws CommandAnswerException;
 }

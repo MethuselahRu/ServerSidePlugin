@@ -2,7 +2,6 @@ package ru.methuselah.serversideplugin.Bukkit;
 
 import java.util.HashMap;
 import java.util.UUID;
-import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
@@ -43,14 +42,15 @@ public class FeaturePlayerInfo extends BukkitFeature implements Listener
 	{
 	}
 	@Override
-	public void onCommand(CommandSender sender, Command command, String[] args) throws CommandAnswerException
+	public void onCommand(CommandSender sender, String command, String[] args) throws CommandAnswerException
 	{
-		if(args.length > 0 && args[0] != null && !"".equals(args[0]))
+		if(command.equals("methuselah") && args.length > 0 && args[0] != null && !"".equals(args[0]))
 		{
-			final String subcommand = args[0].toLowerCase();
-			switch(subcommand)
+			switch(args[0].toLowerCase())
 			{
 				case "whois":
+					break;
+				default:
 					break;
 			}
 		}

@@ -22,7 +22,7 @@ public final class Utilities
 	}
 	public String getDebugStackTrace()
 	{
-		final StringBuilder sb = new StringBuilder(Settings.chatPrefix);
+		final StringBuilder sb = new StringBuilder(Settings.CHAT_PREFIX);
 		sb.append("[DEBUG] An API method was invoked from the path:").append(System.lineSeparator());
 		for(StackTraceElement ste : Thread.currentThread().getStackTrace())
 		{
@@ -30,7 +30,7 @@ public final class Utilities
 			if(!className.equals(this.getClass().getName())
 				&& !className.equals(Thread.class.getName())
 				)
-				sb.append(Settings.chatPrefix).append("[DEBUG] ")
+				sb.append(Settings.CHAT_PREFIX).append("[DEBUG] ")
 					.append(className.startsWith(VanillaMain.class.getPackage().getName()) ? "{_LG}" : "{_LS}")
 					.append(ste.toString())
 					.append(System.lineSeparator());

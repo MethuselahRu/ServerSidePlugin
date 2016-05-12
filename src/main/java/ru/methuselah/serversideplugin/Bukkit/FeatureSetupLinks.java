@@ -3,7 +3,6 @@ package ru.methuselah.serversideplugin.Bukkit;
 import java.io.File;
 import java.io.IOException;
 import java.util.logging.Level;
-import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import ru.methuselah.authlib.links.GlobalReplacementList;
@@ -17,11 +16,11 @@ import ru.methuselah.serversideplugin.BukkitMain;
 import ru.methuselah.serversideplugin.Engine.Utilities;
 import ru.simsonic.rscMinecraftLibrary.Bukkit.CommandAnswerException;
 
-public class FeatureIntegration extends BukkitFeature
+public class FeatureSetupLinks extends BukkitFeature
 {
 	private final String customLinksFilename = "custom-links.json";
 	private final File   customLinks;
-	public FeatureIntegration(BukkitMain plugin)
+	public FeatureSetupLinks(BukkitMain plugin)
 	{
 		super(plugin);
 		customLinks = new File(plugin.getDataFolder(), customLinksFilename);
@@ -41,7 +40,7 @@ public class FeatureIntegration extends BukkitFeature
 	{
 	}
 	@Override
-	public void onCommand(CommandSender sender, Command command, String[] args) throws CommandAnswerException
+	public void onCommand(CommandSender sender, String command, String[] args) throws CommandAnswerException
 	{
 	}
 	private void integrate()

@@ -12,23 +12,25 @@ import ru.methuselah.serversideplugin.API.ServerSideAPI;
 import ru.methuselah.serversideplugin.API.Settings;
 import ru.methuselah.serversideplugin.Bukkit.BukkitFeature;
 import ru.methuselah.serversideplugin.Bukkit.BukkitSettings;
-import ru.methuselah.serversideplugin.Bukkit.FeatureIntegration;
+import ru.methuselah.serversideplugin.Bukkit.FeatureSetupLinks;
 import ru.methuselah.serversideplugin.Bukkit.FeaturePlayerInfo;
+import ru.methuselah.serversideplugin.Bukkit.FeatureUpdater;
 import ru.simsonic.rscMinecraftLibrary.Bukkit.CommandAnswerException;
 import ru.simsonic.rscMinecraftLibrary.Bukkit.GenericChatCodes;
 
 @ProGuardKeep
 public final class BukkitMain extends JavaPlugin
 {
-	public static final Logger consoleLog = Bukkit.getLogger();
-	public final ServerSideAPI api = new BukkitServerSideAPI(this);
+	public  final static Logger consoleLog = Bukkit.getLogger();
+	public  final ServerSideAPI api        = new BukkitServerSideAPI(this);
 	private final HashSet<BukkitFeature> features = new HashSet<>();
 	@Override
 	public void onLoad()
 	{
 		BukkitSettings.onLoad(this);
-		features.add(new FeatureIntegration(this));
+		features.add(new FeatureSetupLinks(this));
 		features.add(new FeaturePlayerInfo(this));
+		features.add(new FeatureUpdater(this));
 		for(BukkitFeature feature : features)
 			feature.onLoad();
 		consoleLog.info("[Methuselah] Plugin has been loaded.");
@@ -56,10 +58,10 @@ public final class BukkitMain extends JavaPlugin
 		{
 			try
 			{
-				feature.onCommand(sender, command, args);
+				feature.onCommand(sender, command.getName(), args);
 			} catch(CommandAnswerException ex) {
 				for(String answer : ex.getMessageArray())
-					sender.sendMessage(GenericChatCodes.processStringStatic(Settings.chatPrefix + answer));
+					sender.sendMessage(GenericChatCodes.processStringStatic(Settings.CHAT_PREFIX + answer));
 			}
 		}
 		return true;

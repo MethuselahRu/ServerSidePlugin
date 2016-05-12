@@ -1,5 +1,5 @@
 general:
-  # Can be: mojang (mojang.com), ely.by (ely, minecraft.ely.by), methuselah.ru (methuselah, auth.methuselah.ru), custom
+  # Possible values: mojang (mojang.com), ely.by (ely, minecraft.ely.by), methuselah.ru (methuselah, auth.methuselah.ru), custom
   links-provider: methuselah
   # Enable debug mode?
   debug: false

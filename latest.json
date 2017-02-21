@@ -1,0 +1,8 @@
+{
+	version: "0.16.1a",
+	snapshot: "true",
+	notes: [
+		"§cNEW§r: Automatic updater!"
+	],
+	url: "https://ci.methuselah.ru/view/methuselah.ru/job/Methuselah%20ServerSidePlugin/72/artifact/target/MethuselahSSP_v0.16.1a.jar"
+}

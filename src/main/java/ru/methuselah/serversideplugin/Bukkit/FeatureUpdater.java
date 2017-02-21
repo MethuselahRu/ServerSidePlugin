@@ -13,7 +13,7 @@ public class FeatureUpdater extends BukkitFeature
 	public FeatureUpdater(BukkitMain plugin)
 	{
 		super(plugin);
-		updater = new BukkitUpdater(plugin, Settings.UPDATER_URL, Settings.CHAT_PREFIX);
+		updater = new BukkitUpdater(plugin, Settings.UPDATER_URL, Settings.CHAT_PREFIX, null);
 	}
 	@Override
 	public void onLoad()

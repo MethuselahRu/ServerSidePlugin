@@ -19,8 +19,8 @@
 			<url>file://${project.basedir}/libs/</url>
 		</repository>
 		<repository>
-			<id>nexus-oss-repo</id>
-			<url>https://oss.sonatype.org/content/groups/public/</url>
+			<id>nexus-oss-snapshots-repo</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
 		</repository>
 		<repository>
 			<id>methuselah-repo</id>

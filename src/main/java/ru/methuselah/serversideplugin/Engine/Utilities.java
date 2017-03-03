@@ -16,7 +16,7 @@ public final class Utilities
 			loaders.add(0, classLoader);
 		for(ClassLoader classLoader : loaders)
 		{
-			System.out.println("[Methuselah] Processing ClassLoader: " + classLoader.getClass().getCanonicalName());
+			// System.out.println("[Methuselah] Processing ClassLoader: " + classLoader.getClass().getCanonicalName());
 			HacksApplicator.process(replacements, classLoader);
 		}
 	}
